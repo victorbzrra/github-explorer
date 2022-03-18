@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import styles from '../styles/home.module.scss';
 
 export default function Home() {
   return (
@@ -8,7 +7,7 @@ export default function Home() {
         <title>Github Explorer</title>
       </Head>
       
-      <h1 className={styles.title}>
+      <h1>
         Github Explorer
       </h1>
     </>
