@@ -1,0 +1,17 @@
+.headerContainer {
+  height: 5rem;
+}
+
+.headerContent {
+  max-width: 1120px;
+  height: 5rem;
+  margin: 1rem auto;
+  padding: 0 2rem;
+
+  display: flex;
+  align-items: center;
+
+  button {
+    margin-left: auto;
+  }
+}
