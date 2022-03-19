@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import Image from 'next/image';
 
+import { SignInButton } from '../components/SignInButton';
+
 import compassLogo from '../assets/compassLogo.svg'; 
 import profileAnalysis from '../assets/profileAnalysis.svg';
 
@@ -23,7 +25,7 @@ export default function Home() {
               <span>Github</span>!
             </h1>
 
-            <button>Entre com o Github</button>
+            <SignInButton />
           </section>
 
           <Image src={profileAnalysis} alt="Análise de perfil de candidato" />
