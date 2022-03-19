@@ -1,12 +1,12 @@
 .searchInput {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .searchTextArea {
   border: none;
-  height: 2.5rem;
-  padding: 0 10rem ;
+  height: 3rem;
+  padding: 0 15rem;
   padding-left: 1rem;
   border-radius: 0.5rem 0 0 0.5rem;
 
@@ -16,15 +16,13 @@
 
 .searchButton {  
   border: 0;
-  height: 2.5rem;
+  height: 3rem;
+  
   padding: 0 1rem;
   border-radius: 0 0.5rem 0.5rem 0;
+  
+  font-weight: bold;
   background: var(--yellow);
-
-  svg {
-    width: 25px;
-    height: 25px;
-  }
 
   transition: filter 0.2s;
 
