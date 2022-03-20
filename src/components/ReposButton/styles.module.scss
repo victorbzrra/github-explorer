@@ -1,0 +1,35 @@
+.buttonsContainer {
+  margin-top: 2rem;
+
+  :first-child {
+    margin-right: 1rem;
+  }
+}
+
+.buttonActive {
+  border: 0;
+  height: 2.5rem;
+  padding: 0 1.5rem;
+  border-radius: 0.5rem;
+  background: var(--yellow);
+  
+  font-weight: bold;
+  color: var(--black);
+}
+
+.buttonInactive {
+  border: 0;
+  height: 2.5rem;
+  padding: 0 1.5rem;
+  border-radius: 0.5rem;
+  background: var(--white);
+  
+  font-weight: bold;
+  color: var(--black);
+
+  transition: background 0.2s;
+
+  &:hover {
+    background: var(--yellow);
+  }
+}
