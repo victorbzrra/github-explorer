@@ -1,10 +1,14 @@
-import { useState } from 'react';
+import { Dispatch, SetStateAction } from 'react';
 import { AiOutlineUser, AiTwotoneStar } from 'react-icons/ai';
+
 import styles from './styles.module.scss';
 
-export function ReposButton() {
-  const [option, setOption] = useState(true);
+interface Props {
+  option: boolean;
+  setOption: Dispatch<SetStateAction<boolean>>;
+}
 
+export function ReposButton({ option, setOption }: Props) {
   function handleOption(option: boolean) {
     setOption(option);
   }

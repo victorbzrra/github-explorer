@@ -1,6 +1,8 @@
+import { ReposDataProps } from './interface';
+
 import styles from './styles.module.scss';
 
-export function ReposTable() {
+export function ReposTable({option, publicRepos, starredRepos}: ReposDataProps) {
   return (
     <table className={styles.tableContainer}>
       <thead className={styles.tableHead}>
@@ -11,22 +13,26 @@ export function ReposTable() {
         </tr>
       </thead>
       <tbody className={styles.tableBody}>
-        <tr>
-          <td>github-explorer</td>
-          <td>100</td>
-          <td>18/03/2022</td>
-        </tr>
-        <tr>
-          <td>github-explorer</td>
-          <td>100</td>
-          <td>18/03/2022</td>
-        </tr>
-        <tr>
-          <td>github-explorer</td>
-          <td>100</td>
-          <td>18/03/2022</td>
-        </tr>
+        {option
+          ? publicRepos.map((repo) => (
+              <tr>
+                <td>
+                  <a href={repo.html_url}>{repo.name}</a>
+                </td>
+                <td>{repo.stargazers_count}</td>
+                <td>{repo.created_at}</td>
+              </tr>
+            ))
+          : starredRepos.map((repo) => (
+              <tr>
+                <td>
+                  <a href={repo.html_url}>{repo.name}</a>
+                </td>
+                <td>{repo.stargazers_count}</td>
+                <td>{repo.created_at}</td>
+              </tr>
+            ))}
       </tbody>
     </table>
-  )
+  );
 }

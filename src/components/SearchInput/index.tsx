@@ -1,18 +1,27 @@
-import { AiOutlineSearch } from "react-icons/ai";
-
+import { useRouter } from 'next/router';
 import styles from './styles.module.scss';
 
 export function SearchInput() {
+  const router = useRouter();
+
+  async function searchUser(event) {
+    event.preventDefault();
+    router.push(`/user/${event.target.searchInput.value}`);
+  }
+
   return (
     <div className={styles.searchInput}>
-      <input
-        type="text"
-        placeholder="Busque por um usuário"
-        className={styles.searchTextArea}
-      />
-      <button type="button" className={styles.searchButton}>
-        Pesquisar
-      </button>
+      <form onSubmit={searchUser}>
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Busque por um usuário"
+          className={styles.searchTextArea}
+        />
+        <button type="submit" className={styles.searchButton}>
+          Pesquisar
+        </button>
+      </form>
     </div>
   );
 }
