@@ -1,0 +1,52 @@
+.buttonsContainer {
+  display: flex;
+  margin-top: 3rem;
+
+  :first-child {
+    margin-right: 1rem;
+  }
+
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.buttonActive {
+  border: 0;
+  height: 2.5rem;
+  padding: 0 1.5rem;
+  border-radius: 0.5rem;
+  background: var(--yellow);
+  
+  font-weight: bold;
+  color: var(--black);
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.buttonInactive {
+  border: 0;
+  height: 2.5rem;
+  padding: 0 1.5rem;
+  border-radius: 0.5rem;
+  background: var(--white);
+  
+  font-weight: bold;
+  color: var(--black);
+
+  transition: background 0.2s;
+
+  &:hover {
+    background: var(--yellow);
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+}

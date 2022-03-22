@@ -1,0 +1,37 @@
+.tableContainer {
+  width: 100%;
+  border-spacing: 0 .5rem;
+  border-collapse: separate;
+  text-indent: initial;
+  margin-top: 1rem;
+}
+
+.tableHead {
+  background: #3f3f3f;
+  color: var(--white);
+
+  th {
+    font-weight: 700;
+    padding: 1rem 2rem;
+    text-align: left;
+    line-height: 1rem;
+  }
+}
+
+.tableBody {
+  td {
+    padding: 1rem 2rem;
+    border: 0;
+    background: var(--white);
+    font-weight: 700;
+    color: var(--black);
+
+    &:first-child {
+      border-radius: 0.5rem 0 0 0.5rem;
+    }
+
+    &:last-child {
+      border-radius: 0 0.5rem 0.5rem 0;
+    }
+  }
+}
