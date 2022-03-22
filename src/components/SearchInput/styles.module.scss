@@ -11,6 +11,10 @@
   border-radius: 0.5rem 0 0 0.5rem;
 
   font-size: 1rem;
+
+  @media(max-width: 832px){
+    padding: 0 1rem;
+  }
 }
 
 .searchButton {  
