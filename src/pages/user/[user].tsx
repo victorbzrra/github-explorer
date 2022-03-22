@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { api } from "../../services/api";
 import { GetServerSideProps } from "next";
@@ -11,11 +11,16 @@ import { ReposButton } from "../../components/ReposButton";
 import { UserProps } from "../../interfaces/interfaces";
 
 import styles from './styles.module.scss';
+import { signIn } from "next-auth/react";
 
 export default function UserPage({ user, publicRepos, starredRepos }: UserProps) {
   const router = useRouter();
   const { query } = useRouter();
   const [option, setOption] = useState(true);
+
+  useEffect(() => {
+    signIn("github", {callbackUrl: `/user/${user.login}`})
+  })
 
   return (
     <>
