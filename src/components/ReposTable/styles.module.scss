@@ -1,9 +1,14 @@
+.scrollContainer {
+  overflow-y: scroll;
+  height: 32rem;
+  margin-top: 2rem;
+}
+
 .tableContainer {
   width: 100%;
   border-spacing: 0 .5rem;
   border-collapse: separate;
   text-indent: initial;
-  margin-top: 1rem;
 }
 
 .tableHead {
@@ -19,6 +24,8 @@
 }
 
 .tableBody {
+  max-height: 100px;
+  
   td {
     padding: 1rem 2rem;
     border: 0;
@@ -40,6 +47,4 @@
       }
     }
   }
-
-
 }
