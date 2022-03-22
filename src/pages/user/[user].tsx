@@ -11,7 +11,7 @@ import { ReposButton } from "../../components/ReposButton";
 import { UserProps } from "../../interfaces/interfaces";
 
 import styles from './styles.module.scss';
-import { signIn } from "next-auth/react";
+import { toast } from "react-toastify";
 
 export default function UserPage({ user, publicRepos, starredRepos }: UserProps) {
   const router = useRouter();
@@ -19,8 +19,11 @@ export default function UserPage({ user, publicRepos, starredRepos }: UserProps)
   const [option, setOption] = useState(true);
 
   useEffect(() => {
-    signIn("github", {callbackUrl: `/user/${user.login}`})
-  })
+    if(!JSON.parse(localStorage.getItem('session'))){
+      router.push("/");
+      toast.warning("Faça login com o github!")
+    }
+  }, [])
 
   return (
     <>

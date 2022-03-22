@@ -3,7 +3,6 @@ import { useRouter } from 'next/router';
 import { api } from '../../services/api';
 
 import styles from './styles.module.scss';
-import 'react-toastify/dist/ReactToastify.css';
 
 export function SearchInput() {
   const router = useRouter();
