@@ -1,3 +1,4 @@
+import moment from 'moment';
 import { ReposDataProps } from './interface';
 
 import styles from './styles.module.scss';
@@ -14,22 +15,22 @@ export function ReposTable({option, publicRepos, starredRepos}: ReposDataProps) 
       </thead>
       <tbody className={styles.tableBody}>
         {option
-          ? publicRepos.map((repo) => (
+          ? publicRepos?.map((repo) => (
               <tr>
                 <td>
                   <a href={repo.html_url}>{repo.name}</a>
                 </td>
                 <td>{repo.stargazers_count}</td>
-                <td>{repo.created_at}</td>
+                <td>{moment(repo.created_at).format("DD/MM/YYYY")}</td>
               </tr>
             ))
-          : starredRepos.map((repo) => (
+          : starredRepos?.map((repo) => (
               <tr>
                 <td>
                   <a href={repo.html_url}>{repo.name}</a>
                 </td>
                 <td>{repo.stargazers_count}</td>
-                <td>{repo.created_at}</td>
+                <td>{moment(repo.created_at).format("DD/MM/YYYY")}</td>
               </tr>
             ))}
       </tbody>
