@@ -1,33 +1,31 @@
 import Image from 'next/image';
+import { UserDataProps } from './interface';
+
 import styles from './styles.module.scss';
 
-
-export function ProfileCard() {
+export function ProfileCard({ user }: UserDataProps) {
   return (
     <header className={styles.profileContainer}>
       <Image
         width={150}
         height={150}
         className={styles.profileImage}
-        src="https://avatars.githubusercontent.com/u/56418569?v=4"
+        src={user.avatar_url}
       />
       <div className={styles.profileContent}>
-        <a href="#" target="_blank" rel="noreferrer">
-          <h1>Victor Bezerra</h1>
+        <a href={user.html_url} target="_blank" rel="noreferrer">
+          <h1>{user.name}</h1>
         </a>
-        <p>
-          Computer Science Student @ UFC - Brazil; Front-end Develop - Fortaleza
-          - Ceará.
-        </p>
+        <p>{user.bio}</p>
         <section className={styles.profileSocial}>
           <p>
-            <strong>7</strong> Repositórios
+            <strong>{user.public_repos}</strong> Repositórios
           </p>
           <p>
-            <strong>25</strong> Seguidores
+            <strong>{user.followers}</strong> Seguidores
           </p>
           <p>
-            <strong>29</strong> Seguindo
+            <strong>{user.following}</strong> Seguindo
           </p>
         </section>
       </div>

@@ -1,9 +1,9 @@
 import Head from "next/head";
+import Image from "next/image";
 import { Header } from "../../components/Header";
-import { ProfileCard } from "../../components/ProfileCard";
-import { ReposButton } from "../../components/ReposButton";
-import { ReposTable } from "../../components/ReposTable";
 import { SearchInput } from "../../components/SearchInput";
+
+import profileSearch from "../../assets/profileSearch.svg";
 
 import styles from './styles.module.scss';
 
@@ -11,17 +11,21 @@ export default function SearchPage() {
   return (
     <>
       <Head>
-        <title>Explorer User</title>
+        <title>Search User</title>
       </Head>
-      <main>
-        <Header />
-        <div className={styles.searchContent}>
+      <Header />
+      <main className={styles.mainContainer}>
+        <div className={styles.searchContainer}>
+          <h1>Recrute um talento para sua empresa!</h1>
           <SearchInput />
-          <ProfileCard />
-          <ReposButton />
-          <ReposTable />
         </div>
+        <Image
+          src={profileSearch}
+          alt="Perfis de talentos"
+          width={250}
+          height={250}
+        />
       </main>
     </>
-  ) 
+  ); 
 }

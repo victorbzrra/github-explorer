@@ -1,0 +1,27 @@
+.userContainer {
+  max-width: 1120px;
+  margin: 0rem auto;
+  padding: 0 2rem;
+
+  margin-top: 3rem;
+}
+
+.buttonContent {
+  display: flex;
+  align-items: center;
+  border: none;
+  background: none;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  color: var(--white);
+  text-align: center;
+  grid-gap: .5rem;
+  gap: .5rem;
+
+  transition: color 0.2s;
+
+  &:hover {
+    color: var(--yellow);
+  }
+}
