@@ -11,7 +11,9 @@ export function SignOutButton() {
       type="button"
       className={styles.signOutButton}
       onClick={() => {
-        signOut({callbackUrl: "/"});
+        signOut({ callbackUrl: "/" }).then(() => {
+          localStorage.removeItem("session")
+        });
       }}
     >
       <AiOutlineGithub />

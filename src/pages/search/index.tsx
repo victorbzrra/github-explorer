@@ -1,18 +1,24 @@
 import Head from "next/head";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import { useEffect } from "react";
-import { signIn } from "next-auth/react";
 import { Header } from "../../components/Header";
 import { SearchInput } from "../../components/SearchInput";
 
 import profileSearch from "../../assets/profileSearch.svg";
 
 import styles from './styles.module.scss';
+import { toast } from "react-toastify";
 
 export default function SearchPage() {
+  const router = useRouter(); 
+
   useEffect(() => {
-    signIn("github", {callbackUrl: "/search"})
-  })
+    if(!JSON.parse(localStorage.getItem('session'))){
+      router.push("/");
+      toast.warning("Faça login com o github!")
+    }
+  }, [])
 
   return (
     <>
