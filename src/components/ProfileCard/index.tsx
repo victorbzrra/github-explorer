@@ -11,6 +11,7 @@ export function ProfileCard({ user }: UserDataProps) {
         height={150}
         className={styles.profileImage}
         src={user.avatar_url}
+        alt="Foto de perfil do usuário"
       />
       <div className={styles.profileContent}>
         <a href={user.html_url} target="_blank" rel="noreferrer">

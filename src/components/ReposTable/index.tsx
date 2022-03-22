@@ -16,7 +16,7 @@ export function ReposTable({option, publicRepos, starredRepos}: ReposDataProps) 
       <tbody className={styles.tableBody}>
         {option
           ? publicRepos?.map((repo) => (
-              <tr>
+              <tr key={repo.name}>
                 <td>
                   <a href={repo.html_url}>{repo.name}</a>
                 </td>
@@ -25,7 +25,7 @@ export function ReposTable({option, publicRepos, starredRepos}: ReposDataProps) 
               </tr>
             ))
           : starredRepos?.map((repo) => (
-              <tr>
+              <tr key={repo.name}>
                 <td>
                   <a href={repo.html_url}>{repo.name}</a>
                 </td>
