@@ -1,5 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
+import { useEffect } from "react";
+import { signIn } from "next-auth/react";
 import { Header } from "../../components/Header";
 import { SearchInput } from "../../components/SearchInput";
 
@@ -8,6 +10,10 @@ import profileSearch from "../../assets/profileSearch.svg";
 import styles from './styles.module.scss';
 
 export default function SearchPage() {
+  useEffect(() => {
+    signIn("github", {callbackUrl: "/search"})
+  })
+
   return (
     <>
       <Head>
